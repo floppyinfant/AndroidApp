@@ -16,6 +16,20 @@ Video2Brain Android
 O'Reilly Learning Android
 http://ofps.oreilly.com/titles/9781449390501/
 
+Samsung Sensor Simulator
+http://innovator.samsungmobile.com/cms/cnts/knowledge.detail.view.do?platformId=1&cntsId=9460&attchId=&attchName=
+
+Markus Spiering, Sven Haiges, HTML5-Apps für iPhone und Android, Franzis
+
+Jonathan Stark, Building Android Apps with HTML, CSS, and JavaScript, 2nd Edition
+http://ofps.oreilly.com/titles/9781449316419/
+
+Appcelerator Titanium
+
+PhoneGap
+Sencha Touch
+jQTouch
+
 Evernote Notizen
 
 
@@ -62,5 +76,21 @@ Technologien: OpenGL ES, ImageJ, Sound ...
 
 Versionierung (Git, Svn)
 JUnit Tests
+
+
+
+-------------------------------------------------------------------------------
+
+TODO
+====
+ContextMenü Hilfe (als HTML)
+Preferences
+SQLite
+Internationalisation
+Theme, Styles, Animations
+Icons
+raw (mp3)
+Google Maps Key
+JUnit
 
 

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, MainActivity!</string>
     <string name="app_name">AndroidApp</string>
-
+    <string name="tx_hello">Hello World, MainActivity!</string>
+    
+    <!-- Schaltflaechen -->
+    <string name="sf_action">Action</string>
+    
+    <!-- Options-Menue -->
+    <string name="men_preferences">Einstellungen</string>
+    <string name="men_help">Hilfe</string>
+    <string name="men_close">Beenden</string>
+    
 </resources>

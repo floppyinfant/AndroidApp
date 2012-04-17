@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="android:Theme.Black">
+        <!-- http://developer.android.com/reference/android/R.style.html -->
+        <!--
+        <item name=""></item>
+        -->
+    </style>
+    <style name="MyTextView" parent="android:Widget.TextView">
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
