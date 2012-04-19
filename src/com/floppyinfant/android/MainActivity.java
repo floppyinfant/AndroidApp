@@ -10,7 +10,13 @@ import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
 
 public class MainActivity extends Activity {
-    /** Called when the activity is first created. */
+	
+	/* 
+	 * Lifecycle
+	 */
+    /** 
+     * Called when the activity is first created.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +26,24 @@ public class MainActivity extends Activity {
         
     }
     
-    /** Button onClick */
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+	}
+
+    @Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+	}
+    
+	/* 
+     * Actions
+     */
+    /** 
+     * Button onClick
+     */
     public void onClickAction(final View view) {
     	switch (view.getId()) {
     	case R.id.sf_action:
@@ -29,6 +52,10 @@ public class MainActivity extends Activity {
     	}
     }
     
+    /* 
+     * Menues(non-Javadoc)
+     * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
       super.onCreateOptionsMenu(menu);
@@ -39,51 +66,40 @@ public class MainActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
       switch (item.getItemId()) {
-        case R.id.opt_preferences:        
+        case R.id.opt_preferences:
 //          startActivity(new Intent(this, EinstellungenBearbeiten.class));
-          return true;    
-        case R.id.opt_help: 
-//          startActivity(new Intent(this, HilfeAnzeigen.class));
-          return true;    
-        case R.id.opt_close: 
+          return true;
+        case R.id.opt_help:
+          startActivity(new Intent(this, HelpActivity.class));
+          return true;
+        case R.id.opt_close:
           finish();
-          return true;      
+          return true;
         default:
-          return super.onOptionsItemSelected(item);        
-      }    
+          return super.onOptionsItemSelected(item);
+      }
     }
 
     @Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
-//		 final MenueItem item = (MenueItem) menu.findItem(R.id.opt_help);
-//    	 item.setEnabled(false);
+//		 menu.findItem(R.id.opt_help).setEnabled(false);
 		return super.onPrepareOptionsMenu(menu);
 	}
     
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
-//      if (v.getId() == R.id.sf_starte_geokontakte) {
-//      getMenuInflater().inflate(
-//          R.menu.startseite_contextmenue, menu);
-//    }
-    	switch (v.getId()) {
-		case R.id.sf_action:
-			getMenuInflater().inflate(R.menu.main_contextmenue, menu);
-			break;
-		default:
-			break;
-		}
+      if (v.getId() == R.id.sf_action) {
+    	  getMenuInflater().inflate(R.menu.main_contextmenue, menu);
+      }
       super.onCreateContextMenu(menu, v, menuInfo);
     }
     
 	@Override
     public boolean onContextItemSelected(MenuItem item) {
       if (item.getItemId() == R.id.opt_help) {
-        final Intent intent = new Intent(this, HilfeAnzeigen.class);
-        intent.putExtra(
-            CONTEXTMENUE_HILFE, 
-            R.raw.hilfe_startseite_geokontakte);
-        startActivity(intent);
+//        final Intent intent = new Intent(this, HilfeAnzeigen.class);
+//        intent.putExtra(CONTEXTMENUE_HILFE, R.raw.hilfe_startseite_geokontakte);
+//        startActivity(intent);
         return true;
       }
       return super.onContextItemSelected(item);   

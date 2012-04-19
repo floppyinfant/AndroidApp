@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- 
+    <PreferenceCategory
+  		android:title="@string/tx_prefs_cat_one"
+  		>
+  		<ListPreference
+  			android:title="@string/tx_prefs_list"
+  			android:key="lieblingsfarbe"
+  			android:entries="@array/lieblingsfarbe"
+  			android:entryValues="@array/lieblingsfarbwerte"
+  			/>
+  	</PreferenceCategory>
+	-->
+</PreferenceScreen>

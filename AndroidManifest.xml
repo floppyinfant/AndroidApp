@@ -21,6 +21,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".SubActivity" />
+        <activity android:name=".HelpActivity" />
+        
+        <!--
+        <service ></service>
+        <provider ></provider>
+        <receiver ></receiver>
+        -->
     </application>
 
 </manifest>

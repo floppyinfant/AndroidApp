@@ -4,6 +4,7 @@ Android
 References
 ==========
 http://developer.android.com/
+http://developer.android.com/design/index.html
 http://code.google.com/intl/de-DE/android/
 Samples<DIR>
 Tutorials
@@ -38,6 +39,7 @@ Inhalte
 =======
 Eclipse IDE, Shortcuts
 Android-SDK, Tools, DDMS (Debugging), LogCat, Profiler, Emulator
+Version Control, ant build tool, UML
 
 
 AndroidManifest.xml
@@ -56,8 +58,10 @@ Intents, explizit, implizit
 Services, lokal (RPC), remote (IPC)
 Broadcast Receiver
 Content Provider
-Sensoren, Mic, Cam, GPS, G-Force, Kompass
-Location based services, Maps
+Device Info, Sensoren, Mic | Audio | Sound, Camera, GPS, Accelerometer, Compass
+Geolocation, Maps
+Media (Audio, Video Playback), PDF ?
+
 
 Sicherheit, Verschlüsselung
 Performance
@@ -86,11 +90,19 @@ TODO
 ContextMenü Hilfe (als HTML)
 Preferences
 SQLite
-Internationalisation
+Internationalisation i18n
 Theme, Styles, Animations
 Icons
 raw (mp3)
 Google Maps Key
 JUnit
+
+
+aktuelles Projekt AndroidApp:
+----------------------------
+Preferences in Manifest?
+TabHost, ActionBar
+Hilfe in WebView (PhoneGap loadUrl ?)
+	Code aus Androidbuch
 
 
