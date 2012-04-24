@@ -32,12 +32,11 @@ public class Main extends Activity {
 		registerForContextMenu(findViewById(R.id.sf_action));
 
 		tracker = GoogleAnalyticsTracker.getInstance();
-	    tracker.startNewSession("UA-31135943-1", this);	// manual dispatch mode
-	    String trackingId = getResources().getString(R.xml.google_analytics);
-//	    tracker.startNewSession(trackingId, this);
+	    String trackingId = getResources().getString(R.string.tracking_id);
+	    tracker.startNewSession(trackingId, this);	// manual dispatch mode
 	    
 		Log.v(TAG, "onCreate");
-		Log.v(TAG, "Google Analytics Tracking-ID: "+trackingId);
+		Log.v(TAG, "Google Analytics Tracking-ID: " + trackingId);
 	}
 
 	@Override
