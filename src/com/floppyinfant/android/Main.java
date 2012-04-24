@@ -1,6 +1,9 @@
 package com.floppyinfant.android;
 
+import com.google.android.apps.analytics.GoogleAnalyticsTracker;
+
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,13 +12,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class Main extends Activity {
 
-	/** 
-	 * Logging
-	 */
-	private static final String TAG = MainActivity.class.getSimpleName();
+	/** Logging */
+	private static final String TAG = Main.class.getSimpleName();
+	
+	GoogleAnalyticsTracker tracker;
 
 	/* ************************************************************************
 	 * Lifecycle
@@ -27,7 +31,13 @@ public class MainActivity extends Activity {
 
 		registerForContextMenu(findViewById(R.id.sf_action));
 
+		tracker = GoogleAnalyticsTracker.getInstance();
+	    tracker.startNewSession("UA-31135943-1", this);	// manual dispatch mode
+	    String trackingId = getResources().getString(R.xml.google_analytics);
+//	    tracker.startNewSession(trackingId, this);
+	    
 		Log.v(TAG, "onCreate");
+		Log.v(TAG, "Google Analytics Tracking-ID: "+trackingId);
 	}
 
 	@Override
@@ -41,6 +51,12 @@ public class MainActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onPause();
 	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		tracker.stopSession();
+	}
 
 	/* ************************************************************************
 	 * Actions
@@ -52,7 +68,38 @@ public class MainActivity extends Activity {
 		switch (view.getId()) {
 		case R.id.sf_action:
 			// Seite wechseln
-			startActivity(new Intent(this, SubActivity.class));
+			startActivity(new Intent(this, Form.class));
+			tracker.trackPageView("/FormScreen");
+			tracker.dispatch();
+			break;
+		case R.id.sf_list:
+			// Seite wechseln zu ListAdapter | ListView
+			startActivity(new Intent(this, List.class));
+			break;
+		case R.id.sf_dialog:
+			// Dialog
+			String title = getString(R.string.dia_title);
+			String message = getString(R.string.dia_message);
+			
+			final ProgressDialog progress = ProgressDialog.show(this, title, message, true, false);
+			
+			// TODO: Error: java.lang.IllegalMonitorStateException: object not locked by thread before wait()
+			new Thread() {
+				public void run() {
+					// execute blocking code in a new Thread
+					try {
+						wait(4000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					progress.dismiss();		// close ProgressDialog
+				}
+			}.start();
+			
+			break;
+		case R.id.sf_toast:
+			// Toast
+			Toast.makeText(this, R.string.tx_hello, Toast.LENGTH_LONG).show();
 			break;
 		}
 	}
@@ -75,7 +122,7 @@ public class MainActivity extends Activity {
 //          startActivity(new Intent(this, EinstellungenBearbeiten.class));
 			return true;
 		case R.id.opt_help:
-			startActivity(new Intent(this, HelpActivity.class));
+			startActivity(new Intent(this, Help.class));
 			return true;
 		case R.id.opt_close:
 			finish();
@@ -106,7 +153,7 @@ public class MainActivity extends Activity {
 //          final Intent intent = new Intent(this, HilfeAnzeigen.class);
 //          intent.putExtra(CONTEXTMENUE_HILFE, R.raw.hilfe_startseite_geokontakte);
 //          startActivity(intent);
-			startActivity(new Intent(this, HelpActivity.class));
+			startActivity(new Intent(this, Help.class));
 			return true;	// zeigt dem Framework an, dass das Ereignis verbraucht ist
 		default:
 			// return true;

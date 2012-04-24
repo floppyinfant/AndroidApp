@@ -15,5 +15,6 @@
 	
 	<!-- Farbzuordnung -->
 	<color name="textfarbe">@color/weiss</color>
+	<color name="list_background">#009900</color>
 	
 </resources>

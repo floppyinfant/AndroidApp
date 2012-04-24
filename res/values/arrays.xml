@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="fruechte">
-		<item>Banane</item>
-		<item>Apfel</item>
-		<item>Birne</item>
-		<item>Orange</item>
-		<item>Zitrone</item>
-		<item>Papaya</item>
-		<item>Mango</item>
+	<string-array name="list_order_by">
+	    <item>id</item>
+	    <item>name</item>
 	</string-array>
 	
-	<string-array name="menue_icon_namen">
+	<string-array name="list">
 		<item>ic_menu_add</item>
 		<item>ic_menu_agenda</item>
 		<item>ic_menu_always_landscape_portrait</item>
@@ -53,4 +48,5 @@
 		<item>ic_menu_week</item>
 		<item>ic_menu_zoom</item>
 	</string-array>
+	
 </resources>

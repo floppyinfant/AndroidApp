@@ -8,7 +8,7 @@ import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.webkit.WebView;
 
-public class HelpActivity extends Activity {
+public class Help extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

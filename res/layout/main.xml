@@ -20,5 +20,26 @@
             android:onClick="onClickAction"
             android:text="@string/sf_action" />
         
+        <Button
+            android:id="@+id/sf_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickAction"
+            android:text="@string/sf_list" />
+        
+        <Button
+            android:id="@+id/sf_dialog"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickAction"
+            android:text="@string/sf_dialog" />
+        
+        <Button
+            android:id="@+id/sf_toast"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickAction"
+            android:text="@string/sf_toast" />
+        
     </LinearLayout>
 </ScrollView>

@@ -6,10 +6,23 @@
     
     <!-- Schaltflaechen -->
     <string name="sf_action">Action</string>
+    <string name="sf_list">Liste</string>
+    <string name="sf_dialog">Dialog</string>
+    <string name="sf_toast">Toast</string>
     
     <!-- Options-Menue -->
-    <string name="men_preferences">Einstellungen</string>
-    <string name="men_help">Hilfe</string>
-    <string name="men_close">Beenden</string>
+    <string name="opt_preferences">Einstellungen</string>
+    <string name="opt_help">Hilfe</string>
+    <string name="opt_close">Beenden</string>
+    
+    <!-- Dialog -->
+    <string name="dia_title">Bitte warten &#8230;</string>
+    <string name="dia_message">Daten werden geladen</string>
+    
+    <!-- Formular -->
+    <string name="form_text_default">Bitte Namen eingeben.</string>
+    
+    <!-- ListView -->
+    <string name="list_empty">Keine Daten!</string>
     
 </resources>
