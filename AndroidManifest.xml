@@ -25,6 +25,7 @@
         <activity android:name=".Form" />
         <activity android:name=".List" />
         <activity android:name=".Help" />
+        <activity android:name=".Preferences" />
         
         <!--
         <service ></service>

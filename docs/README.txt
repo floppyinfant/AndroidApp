@@ -3,11 +3,16 @@ Android
 
 References
 ==========
+Developers Android
 http://developer.android.com/
+Android Design
 http://developer.android.com/design/index.html
 http://code.google.com/intl/de-DE/android/
 Samples<DIR>
 Tutorials
+Google Maps API Key
+https://developers.google.com/maps/documentation/android/mapkey?hl=de-DE
+
 
 Arno Becker, Marcus Pant, Android 2, Grundlagen und Programmierung, dpunkt-Verlag
 http://www.androidbuch.de
@@ -34,6 +39,23 @@ jQTouch
 Evernote Notizen
 
 
+
+Samples
+=======
+Androidbuch --> Amando
+video2brain --> Dashboard
+
+Notepad Tutorial
+
+Google Analytics sample
+https://developers.google.com/analytics/devguides/collection/android/devguide?hl=de-DE
+EasyTracker
+http://code.google.com/p/analytics-api-samples/
+
+
+
+
+-------------------------------------------------------------------------------
 
 Inhalte
 =======
@@ -87,22 +109,29 @@ JUnit Tests
 
 TODO
 ====
-ContextMenü Hilfe (als HTML)
+ContextMenü Hilfe (HTML + JS in WebView)
 Preferences
-SQLite
+Cursor, Performante AdapterView (ViewHolder Pattern)
+SQLite Database
+Google Maps Key, MapsView
+Google Analytics (SimpleTracker Source)
+JUnit
+
+Icons (UI Guidelines + Photoshop Template)
 Internationalisation i18n
 Theme, Styles, Animations
-Icons
 raw (mp3)
-Google Maps Key
-JUnit
+
+Lizenz Bestätigungs-Dialog beim ersten Start der App
+
 
 
 aktuelles Projekt AndroidApp:
 ----------------------------
 Preferences in Manifest?
+Debuggable Variable in res
 TabHost, ActionBar
-Hilfe in WebView (PhoneGap loadUrl ?)
-	Code aus Androidbuch
+
+
 
 

@@ -77,6 +77,14 @@ public class Main extends Activity {
 			break;
 		case R.id.sf_dialog:
 			// Dialog
+			String title1 = getString(R.string.dia1_title);
+			String message1 = getString(R.string.dia1_message);
+			
+			// TODO Builder
+			
+			break;
+		case R.id.sf_progress:
+			// Dialog
 			String title = getString(R.string.dia_title);
 			String message = getString(R.string.dia_message);
 			
@@ -98,7 +106,10 @@ public class Main extends Activity {
 			break;
 		case R.id.sf_toast:
 			// Toast
-			Toast.makeText(this, R.string.tx_hello, Toast.LENGTH_LONG).show();
+			String msg = getString(R.string.tx_hello) 
+				+ " " + Preferences.getPreferences(this).getString("username", "Welt!");
+			Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
+			toast.show();
 			break;
 		}
 	}
@@ -118,7 +129,7 @@ public class Main extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.opt_preferences:
-//          startActivity(new Intent(this, EinstellungenBearbeiten.class));
+			startActivity(new Intent(this, Preferences.class));
 			return true;
 		case R.id.opt_help:
 			startActivity(new Intent(this, Help.class));

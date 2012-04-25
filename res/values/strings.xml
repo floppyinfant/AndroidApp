@@ -2,12 +2,13 @@
 <resources>
 
     <string name="app_name">AndroidApp</string>
-    <string name="tx_hello">Hello World, MainActivity!</string>
+    <string name="tx_hello">Hallo</string>
     
     <!-- Schaltflaechen -->
     <string name="sf_action">Action</string>
     <string name="sf_list">Liste</string>
     <string name="sf_dialog">Dialog</string>
+    <string name="sf_progress">Progress</string>
     <string name="sf_toast">Toast</string>
     
     <!-- Options-Menue -->
@@ -16,6 +17,10 @@
     <string name="opt_close">Beenden</string>
     
     <!-- Dialog -->
+    <string name="dia1_title">Preferences lesen</string>
+    <string name="dia1_message">Hallo </string>
+    
+    <!-- ProgressDialog -->
     <string name="dia_title">Bitte warten &#8230;</string>
     <string name="dia_message">Daten werden geladen</string>
     
@@ -24,5 +29,9 @@
     
     <!-- ListView -->
     <string name="list_empty">Keine Daten!</string>
+    
+    <!-- Preferences -->
+    <string name="prefs_cat1">Einstellungen</string>
+    <string name="prefs_username">Benutzername</string>
     
 </resources>

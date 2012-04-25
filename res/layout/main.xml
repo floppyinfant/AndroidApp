@@ -34,6 +34,13 @@
             android:onClick="onClickAction"
             android:text="@string/sf_dialog" />
         
+         <Button
+            android:id="@+id/sf_progress"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickAction"
+            android:text="@string/sf_progress" />
+        
         <Button
             android:id="@+id/sf_toast"
             android:layout_width="fill_parent"
