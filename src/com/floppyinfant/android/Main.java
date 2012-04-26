@@ -90,16 +90,18 @@ public class Main extends Activity {
 			
 			final ProgressDialog progress = ProgressDialog.show(this, title, message, true, false);
 			
-			// TODO: Error: java.lang.IllegalMonitorStateException: object not locked by thread before wait()
 			new Thread() {
 				public void run() {
 					// execute blocking code in a new Thread
-					try {
-						wait(4000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
+					synchronized (this) {
+						try {
+							Thread.sleep(4000);
+							//wait(4000);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+						progress.dismiss();		// close ProgressDialog
 					}
-					progress.dismiss();		// close ProgressDialog
 				}
 			}.start();
 			
@@ -151,7 +153,7 @@ public class Main extends Activity {
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 		if (v.getId() == R.id.sf_action) {
-			getMenuInflater().inflate(R.menu.main_contextmenue, menu);
+			getMenuInflater().inflate(R.menu.contextmenu_main, menu);
 		}
 		super.onCreateContextMenu(menu, v, menuInfo);
 	}
