@@ -6,6 +6,7 @@
     
     <!-- Schaltflaechen -->
     <string name="sf_action">Action</string>
+    <string name="sf_tabhost">TabHost</string>
     <string name="sf_list">Liste</string>
     <string name="sf_dialog">Dialog</string>
     <string name="sf_progress">Progress</string>
@@ -29,6 +30,10 @@
     
     <!-- ListView -->
     <string name="list_empty">Keine Daten!</string>
+    
+    <!-- TabHost -->
+    <string name="tx_tab1">Hallo Tab1</string>
+    <string name="tx_tab2">Hallo Tab2</string>
     
     <!-- Preferences -->
     <string name="prefs_cat1">Einstellungen</string>

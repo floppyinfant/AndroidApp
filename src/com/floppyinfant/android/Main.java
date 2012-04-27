@@ -71,6 +71,11 @@ public class Main extends Activity {
 			tracker.trackPageView("/FormScreen");
 			tracker.dispatch();
 			break;
+		case R.id.sf_tabhost:
+			startActivity(new Intent(this, TabHost.class));
+			tracker.trackPageView("/TabHost");
+			tracker.dispatch();
+			break;
 		case R.id.sf_list:
 			// Seite wechseln zu ListAdapter | ListView
 			startActivity(new Intent(this, List.class));

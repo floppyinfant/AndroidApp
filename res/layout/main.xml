@@ -21,6 +21,13 @@
             android:text="@string/sf_action" />
         
         <Button
+            android:id="@+id/sf_tabhost"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickAction"
+            android:text="@string/sf_tabhost" />
+        
+        <Button
             android:id="@+id/sf_list"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

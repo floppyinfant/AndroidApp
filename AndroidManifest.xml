@@ -22,8 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TabHost" />
         <activity android:name=".Form" />
         <activity android:name=".List" />
+        <activity android:name=".Data" />
+        <activity android:name=".Map" />
         <activity android:name=".Help" />
         <activity android:name=".Preferences" />
         

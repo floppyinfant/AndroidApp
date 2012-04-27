@@ -10,6 +10,7 @@ http://developer.android.com/design/index.html
 http://code.google.com/intl/de-DE/android/
 Samples<DIR>
 Tutorials
+http://developer.android.com/resources/browser.html?tag=tutorial
 Google Maps API Key
 https://developers.google.com/maps/documentation/android/mapkey?hl=de-DE
 
