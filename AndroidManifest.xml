@@ -5,24 +5,33 @@
     android:versionName="1.0" >
 
     <uses-sdk android:minSdkVersion="8" />
-
+    
+    <!-- Permissions needed by Google Analytics -->
+    <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
         android:debuggable="true" >
         
+        <!-- *************************************************************** -->
         <!-- Activities -->
+        <!-- *************************************************************** -->
         <activity
             android:name=".Main"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TabHost" />
+        <activity android:name=".Tabs"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name=".Tab1" />
+        <activity android:name=".Tab2" />
         <activity android:name=".Form" />
         <activity android:name=".List" />
         <activity android:name=".Data" />
@@ -37,8 +46,4 @@
         -->
     </application>
     
-    <!-- Permissions needed by Google Analytics -->
-    <uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	
 </manifest>

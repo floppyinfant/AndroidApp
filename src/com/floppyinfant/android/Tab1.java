@@ -8,12 +8,12 @@ import android.os.Bundle;
  * @author TM
  * @see http://developer.android.com/resources/tutorials/views/hello-tabwidget.html
  */
-public class TabHost extends Activity {
+public class Tab1 extends Activity {
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tabhost);
+        setContentView(R.layout.tab_1);
     }
 	
 }

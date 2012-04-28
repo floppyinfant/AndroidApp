@@ -41,13 +41,11 @@ public class Main extends Activity {
 
 	@Override
 	protected void onResume() {
-		// TODO Auto-generated method stub
 		super.onResume();
 	}
 
 	@Override
 	protected void onPause() {
-		// TODO Auto-generated method stub
 		super.onPause();
 	}
 	
@@ -72,7 +70,7 @@ public class Main extends Activity {
 			tracker.dispatch();
 			break;
 		case R.id.sf_tabhost:
-			startActivity(new Intent(this, TabHost.class));
+			startActivity(new Intent(this, Tabs.class));
 			tracker.trackPageView("/TabHost");
 			tracker.dispatch();
 			break;
@@ -122,8 +120,7 @@ public class Main extends Activity {
 	}
 
 	/* ************************************************************************
-	 * Menues(non-Javadoc)
-	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+	 * Menus
 	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
