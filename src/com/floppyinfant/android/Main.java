@@ -1,18 +1,21 @@
 package com.floppyinfant.android;
 
-import com.google.android.apps.analytics.GoogleAnalyticsTracker;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.Toast;
+
+import com.google.android.apps.analytics.GoogleAnalyticsTracker;
 
 public class Main extends Activity {
 
@@ -78,6 +81,42 @@ public class Main extends Activity {
 			// Seite wechseln zu ListAdapter | ListView
 			startActivity(new Intent(this, List.class));
 			break;
+		case R.id.sf_intent:
+			// implicite Intent
+			String uri = "";
+			
+			// CALL
+			//uri = "tel:(+49) 641 2503192";
+			//Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse(uri));
+			
+			// Website
+			//uri = "http://www.floppyinfant.com";
+			
+			// geo
+			String coords = "50.1,7.1";
+			String zoom = "6";		// Zoomlevel 0 - 23
+			//uri = "geo:" + coords + "?z=" + zoom;
+			
+			String address = "Ludwigstrasse%2036,35390%20Gießen";
+			uri = "geo:0,0?q=" + address;
+			
+			// StreetView
+			//uri = "google.streetview:cbll=" + coords;
+			
+			// route
+			String saddr = "";
+			String daddr = "";
+			//uri = "http://maps.google.com/maps?saddr=" + saddr + "&daddr=" + daddr;
+			
+			
+			Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+			if (isAvailable(i)) {
+				Log.v(TAG, "Intent with URI: " + uri);
+				startActivity(i);
+			} else {
+				Log.w(TAG, "Intent not available; URI: " + uri);
+			}
+			break;
 		case R.id.sf_dialog:
 			// Dialog
 			String title1 = getString(R.string.dia1_title);
@@ -117,6 +156,17 @@ public class Main extends Activity {
 			toast.show();
 			break;
 		}
+	}
+
+	/**
+	 * check if intent can be resolved to avoid runtime errors (ActivityNotFoundException)
+	 * 
+	 * @param i Intent
+	 * @return true if Intent is available on device, false if Intent is not available on device
+	 */
+	private boolean isAvailable(Intent i) {
+		java.util.List<ResolveInfo> list = getPackageManager().queryIntentActivities(i, PackageManager.MATCH_DEFAULT_ONLY);
+		return list.size() > 0;
 	}
 
 	/* ************************************************************************

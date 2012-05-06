@@ -45,7 +45,9 @@ Samples
 =======
 Androidbuch --> Amando
 video2brain --> Dashboard
+Samples --> ApiDemo
 
+Tutorial Hello Views
 Notepad Tutorial
 
 Google Analytics sample
@@ -75,7 +77,8 @@ Contextmenü
 Dialog
 Toast
 Progress-Bar
-Daten, Preferences, Dateisystem, SQLite, Lists and Adapters
+Preferences | Settings
+Daten, Dateisystem, SQLite, Lists and Adapters
 NotificationManager
 Intents, explizit, implizit
 Services, lokal (RPC), remote (IPC)
@@ -94,6 +97,48 @@ Lizenzen, Copyrights, Google Play (Market)
 
 
 
+Design
+======
+http://developer.android.com/design/style/iconography.html
+
+Launcher Icon for Google Play (Market) 512x512dp
+Launcher Icon for Homescreen 48x48dp (full asset)
+
+ActionBar Icons 32x32dp (full asset) with 24x24dp (optical square)
+	color #FFFFFF with 80% (enabled) or 30% (disabled) opacity
+
+Contextual Icons 16x16dp with 12x12dp
+
+Notification Icons 24x24dp with 22x22dp 
+	color white
+
+
+
+-------------------------------------------------------------------------------
+
+TODO
+====
+Lizenz Bestätigungs-Dialog beim ersten Start der App
+ContextMenü Hilfe (HTML + JS in WebView)
+
+Cursor, Performante AdapterView (ViewHolder Pattern)
+SQLite Database
+
+Google Maps Key, MapsView
+Google Analytics (SimpleTracker Source)
+Debuggable Variable in res
+JUnit
+
+Icons (UI Guidelines + Photoshop Template)
+Internationalisation i18n
+Theme, Styles, Animations
+Customisation: Personalisieren des UI durch den User (@see Design Principles)
+ActionBar
+
+raw (mp3)
+
+
+
 Ideen
 =====
 Bestes Layout mit Icons, Animationen (GUI Design)
@@ -104,34 +149,6 @@ Technologien: OpenGL ES, ImageJ, Sound ...
 Versionierung (Git, Svn)
 JUnit Tests
 
-
-
--------------------------------------------------------------------------------
-
-TODO
-====
-ContextMenü Hilfe (HTML + JS in WebView)
-Preferences
-Cursor, Performante AdapterView (ViewHolder Pattern)
-SQLite Database
-Google Maps Key, MapsView
-Google Analytics (SimpleTracker Source)
-JUnit
-
-Icons (UI Guidelines + Photoshop Template)
-Internationalisation i18n
-Theme, Styles, Animations
-raw (mp3)
-
-Lizenz Bestätigungs-Dialog beim ersten Start der App
-
-
-
-aktuelles Projekt AndroidApp:
-----------------------------
-Preferences in Manifest?
-Debuggable Variable in res
-TabHost, ActionBar
 
 
 

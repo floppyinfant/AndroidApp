@@ -27,6 +27,13 @@
             android:onClick="onClickAction"
             android:text="@string/sf_tabhost" />
         
+        <ImageButton 
+            android:id="@+id/sf_intent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickAction"
+            android:src="@drawable/ic_android_logo" />
+        
         <Button
             android:id="@+id/sf_list"
             android:layout_width="fill_parent"

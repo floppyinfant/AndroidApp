@@ -6,7 +6,7 @@ import android.os.Bundle;
 /**
  * 
  * @author TM
- * @see http://developer.android.com/resources/tutorials/views/hello-tabwidget.html
+ * 
  */
 public class Tab1 extends Activity {
 	
