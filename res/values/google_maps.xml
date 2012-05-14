@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="maps_api_key">0OJpguAKPGj5HfSqnxmOFYldSlGcdu-zIKGCv9g</string>    
+    <!-- Terminal | Eingabeaufforderung: -->
+    <!-- keytool -list -keystore c:\Users\TM\.android\debug.keystore -->
+    <!-- Website: -->
+    <!-- http://code.google.com/android/maps-api-signup.html -->
+    <!-- https://developers.google.com/maps/documentation/android/mapkey?hl=de-DE -->
+	<string name="maps_api_key">0fQW3_v0oTfoZ6A-l4L6r9bqz2sXSR6UqzBtTJw</string>    
 </resources>

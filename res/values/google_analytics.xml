@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Website: -->
+    <!-- https://developers.google.com/analytics/devguides/collection/android/?hl=de-DE -->
     <string name="tracking_id">UA-31135943-1</string>
 </resources>

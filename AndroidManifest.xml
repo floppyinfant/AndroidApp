@@ -9,12 +9,19 @@
     <!-- Permissions needed by Google Analytics -->
     <uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<!-- Permissions needed by Google Maps -->
+	<!-- INTERNET -->
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /><!-- Network cell -->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /><!-- GPS location data -->
+	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" /><!-- Emulator faked location data -->
 	
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
         android:debuggable="true" >
+        
+        <uses-library android:name="com.google.android.maps" />
         
         <!-- *************************************************************** -->
         <!-- Activities -->
@@ -30,17 +37,23 @@
         <activity android:name=".Tabs"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name=".Tabs" />
         <activity android:name=".Tab1" />
         <activity android:name=".Tab2" />
         <activity android:name=".Form" />
         <activity android:name=".List" />
         <activity android:name=".Data" />
-        <activity android:name=".Map" />
+        <activity android:name=".Maps" />
         <activity android:name=".Help" />
         <activity android:name=".Preferences" />
+        <activity android:name=".NetworkServiceActivity" />
+        
+        <!-- *************************************************************** -->
+        <!-- Services -->
+        <!-- *************************************************************** -->
+        <service android:name=".NetworkService" /><!-- Local Service (RPC); Remote Service (IPC) mit Attribut 'android:process=":globalCtx"'; Doppelpunkt: neuer Prozess, Großbuchstabe: gleicher User (Zugriff nur durch startende Anwendung); Kleinbuchstabe: globaler Context (Zugriff durch alle Prozesse möglich) -->
         
         <!--
-        <service ></service>
         <provider ></provider>
         <receiver ></receiver>
         -->

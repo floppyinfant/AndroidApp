@@ -36,6 +36,13 @@ public class Tabs extends TabActivity {
         		.setContent(intent);
         tabHost.addTab(spec);
         
+        // Tab 3 MapView
+        intent = new Intent().setClass(this, Maps.class);
+        spec = tabHost.newTabSpec("3")
+        		.setIndicator("Maps", getResources().getDrawable(R.drawable.ic_tab_1))
+        		.setContent(intent);
+        tabHost.addTab(spec);
+        
         
         tabHost.setCurrentTab(0);
     }
