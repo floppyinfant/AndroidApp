@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 
-public class NetworkServiceActivity extends Activity {
+public class NetworkServiceController extends Activity {
 	
 	private NetworkService.ServiceBinder mBinder;
 	

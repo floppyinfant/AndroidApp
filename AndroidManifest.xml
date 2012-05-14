@@ -46,7 +46,7 @@
         <activity android:name=".Maps" />
         <activity android:name=".Help" />
         <activity android:name=".Preferences" />
-        <activity android:name=".NetworkServiceActivity" />
+        <activity android:name=".NetworkServiceController" />
         
         <!-- *************************************************************** -->
         <!-- Services -->
