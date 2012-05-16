@@ -69,7 +69,7 @@ public class Main extends Activity {
 		case R.id.sf_action:
 			// Seite wechseln
 			startActivity(new Intent(this, Form.class));
-			tracker.trackPageView("/FormScreen");
+			tracker.trackPageView("/FormScreen");	// Google Analytics
 			tracker.dispatch();
 			break;
 		case R.id.sf_tabhost:
@@ -78,7 +78,7 @@ public class Main extends Activity {
 			tracker.dispatch();
 			break;
 		case R.id.sf_list:
-			// Seite wechseln zu ListAdapter | ListView
+			// ListAdapter | ListView
 			startActivity(new Intent(this, List.class));
 			break;
 		case R.id.sf_intent:
@@ -155,6 +155,12 @@ public class Main extends Activity {
 			Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
 			toast.show();
 			break;
+		case R.id.sf_canvas:
+			startActivity(new Intent(this, Graphics.class));
+			break;
+		case R.id.sf_opengl:
+			startActivity(new Intent(this, GLActivity.class));
+			break;
 		}
 	}
 
@@ -214,9 +220,6 @@ public class Main extends Activity {
 	public boolean onContextItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.ctx_help:
-//          final Intent intent = new Intent(this, HilfeAnzeigen.class);
-//          intent.putExtra(CONTEXTMENUE_HILFE, R.raw.hilfe_startseite_geokontakte);
-//          startActivity(intent);
 			startActivity(new Intent(this, Help.class));
 			return true;	// zeigt dem Framework an, dass das Ereignis verbraucht ist
 		default:

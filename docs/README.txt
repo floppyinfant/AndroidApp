@@ -45,7 +45,7 @@ Samples
 =======
 Androidbuch --> Amando
 video2brain --> Dashboard
-Samples --> ApiDemo
+Samples --> ApiDemos
 
 Tutorial Hello Views
 Notepad Tutorial
@@ -62,18 +62,19 @@ http://code.google.com/p/analytics-api-samples/
 
 Inhalte
 =======
+Java API, Tutorial, Insel, Codebook, HeadFirst Java | DesignPatterns, Effective Java
 Eclipse IDE, Shortcuts
-Android-SDK, Tools, DDMS (Debugging), LogCat, Profiler, Emulator
-Version Control, ant build tool, UML
+Android-SDK, Tools, DDMS (Debugging), LogCat, Profiler | visualvm, Emulator
+Version Control, ant build tool, UML, Metrics
 
 
 AndroidManifest.xml
 Activity
 layouts
 Views
-Ressourcen
-Optionsmenü
-Contextmenü
+Resources
+Optionsmenu
+Contextmenu
 Dialog
 Toast
 Progress-Bar
@@ -81,11 +82,11 @@ Preferences | Settings
 Daten, Dateisystem, SQLite, Lists and Adapters
 NotificationManager
 Intents, explizit, implizit
-Services, lokal (RPC), remote (IPC)
+Services, LokalService (RPC), RemoteService (IPC), Binder, ServiceConnection, Callback Handler, Message Queue, Looper
 Broadcast Receiver
-Content Provider
+Content Provider, Cursor, Adapter, Lists
 Device Info, Sensoren, Mic | Audio | Sound, Camera, GPS, Accelerometer, Compass
-Geolocation, Maps
+Geolocation, Maps API
 Media (Audio, Video Playback), PDF ?
 
 
@@ -124,18 +125,20 @@ ContextMenü Hilfe (HTML + JS in WebView)
 Cursor, Performante AdapterView (ViewHolder Pattern)
 SQLite Database
 
-Google Maps Key, MapsView
+//Google Maps Key, MapsView
 Google Analytics (SimpleTracker Source)
 Debuggable Variable in res
 JUnit
 
-Icons (UI Guidelines + Photoshop Template)
+//Icons (UI Guidelines + Photoshop Template)
 Internationalisation i18n
 Theme, Styles, Animations
 Customisation: Personalisieren des UI durch den User (@see Design Principles)
 ActionBar
 
 raw (mp3)
+
+Graphics: View, Canvas, Drawable, OpenGL ES
 
 
 
@@ -146,7 +149,7 @@ Most wanted Apps in Google Play, Empfehlungen von Zeitschriften ("was will der K
 
 Technologien: OpenGL ES, ImageJ, Sound ...
 
-Versionierung (Git, Svn)
+//Versionierung (Git, Svn)
 JUnit Tests
 
 

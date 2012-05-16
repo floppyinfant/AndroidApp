@@ -62,5 +62,19 @@
             android:onClick="onClickAction"
             android:text="@string/sf_toast" />
         
+        <Button
+            android:id="@+id/sf_canvas"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickAction"
+            android:text="@string/sf_canvas" />
+        
+        <Button
+            android:id="@+id/sf_opengl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickAction"
+            android:text="@string/sf_opengl" />
+        
     </LinearLayout>
 </ScrollView>

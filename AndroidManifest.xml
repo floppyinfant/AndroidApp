@@ -47,6 +47,8 @@
         <activity android:name=".Help" />
         <activity android:name=".Preferences" />
         <activity android:name=".NetworkServiceController" />
+        <activity android:name=".Graphics" />
+        <activity android:name=".GLActivity" />
         
         <!-- *************************************************************** -->
         <!-- Services -->

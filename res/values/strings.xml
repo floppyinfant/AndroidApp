@@ -11,6 +11,8 @@
     <string name="sf_dialog">Dialog</string>
     <string name="sf_progress">Progress</string>
     <string name="sf_toast">Toast</string>
+    <string name="sf_canvas">Canvas</string>
+    <string name="sf_opengl">OpenGL</string>
     
     <!-- Options-Menue -->
     <string name="opt_preferences">Einstellungen</string>
