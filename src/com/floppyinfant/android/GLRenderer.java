@@ -3,6 +3,7 @@ package com.floppyinfant.android;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 import android.opengl.GLSurfaceView;
+import android.opengl.GLU;
 
 /**
  * Render a cube.
@@ -25,19 +26,24 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 		 * The most efficient way of doing this is to use glClear().
 		 */
 		gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
-
+		
 		/*
 		 * Now we're ready to draw some 3D objects
 		 */
 		gl.glMatrixMode(GL10.GL_MODELVIEW);
 		gl.glLoadIdentity();
+		// When using GL_MODELVIEW, you must set the view point
+		//GLU.gluLookAt(gl, 0, 0, -5, 0f, 0f, 0f, 0f, 1.0f, 0f);
+		
+		// Add Motion
 		gl.glTranslatef(0, 0, -3.0f);
 		gl.glRotatef(mAngleX, 0, 1, 0);
 		gl.glRotatef(mAngleY, 1, 0, 0);
-
+		
+		// Draw
 		gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
 		gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
-
+		
 		mObject.draw(gl);
 	}
 
@@ -50,7 +56,6 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 		 * draw, but usually a new projection needs to be set when the viewport
 		 * is resized.
 		 */
-
 		float ratio = (float) width / height;
 		gl.glMatrixMode(GL10.GL_PROJECTION);
 		gl.glLoadIdentity();
@@ -72,10 +77,13 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 		 */
 		gl.glHint(GL10.GL_PERSPECTIVE_CORRECTION_HINT, GL10.GL_FASTEST);
 
-		gl.glClearColor(1, 1, 1, 1);
+		gl.glClearColor(0f, 0f, 0f, 1f);	// background color
 		gl.glEnable(GL10.GL_CULL_FACE);
 		gl.glShadeModel(GL10.GL_SMOOTH);
 		gl.glEnable(GL10.GL_DEPTH_TEST);
+		
+		// Initialize the objects to be drawn here
+		// initShapes();
 	}
 
 }

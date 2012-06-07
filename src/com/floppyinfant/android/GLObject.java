@@ -25,31 +25,36 @@ import javax.microedition.khronos.opengles.GL10;
 /**
  * A vertex shaded cube.
  */
-class GLObject
-{
-    public GLObject()
-    {
-        int one = 0x10000;
+class GLObject {
+
+    private IntBuffer   mVertexBuffer;
+    private IntBuffer   mColorBuffer;
+    private ByteBuffer  mIndexBuffer;
+    
+    public GLObject() {
+        
+    	int one = 0x10000;
+        
         int vertices[] = {
                 -one, -one, -one,
-                one, -one, -one,
-                one,  one, -one,
+                 one, -one, -one,
+                 one,  one, -one,
                 -one,  one, -one,
                 -one, -one,  one,
-                one, -one,  one,
-                one,  one,  one,
+                 one, -one,  one,
+                 one,  one,  one,
                 -one,  one,  one,
         };
 
         int colors[] = {
-                0,    0,    0,  one,
+                  0,    0,    0,  one,
                 one,    0,    0,  one,
                 one,  one,    0,  one,
-                0,  one,    0,  one,
-                0,    0,  one,  one,
+                  0,  one,    0,  one,
+                  0,    0,  one,  one,
                 one,    0,  one,  one,
                 one,  one,  one,  one,
-                0,  one,  one,  one,
+                  0,  one,  one,  one,
         };
 
         byte indices[] = {
@@ -86,15 +91,13 @@ class GLObject
         mIndexBuffer.position(0);
     }
 
-    public void draw(GL10 gl)
-    {
-        gl.glFrontFace(gl.GL_CW);
+    public void draw(GL10 gl) {
+        
+    	gl.glFrontFace(gl.GL_CW);
+        
         gl.glVertexPointer(3, gl.GL_FIXED, 0, mVertexBuffer);
         gl.glColorPointer(4, gl.GL_FIXED, 0, mColorBuffer);
         gl.glDrawElements(gl.GL_TRIANGLES, 36, gl.GL_UNSIGNED_BYTE, mIndexBuffer);
     }
 
-    private IntBuffer   mVertexBuffer;
-    private IntBuffer   mColorBuffer;
-    private ByteBuffer  mIndexBuffer;
 }

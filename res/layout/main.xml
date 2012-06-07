@@ -76,5 +76,12 @@
             android:onClick="onClickAction"
             android:text="@string/sf_opengl" />
         
+        <Button
+            android:id="@+id/sf_db"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickAction"
+            android:text="@string/sf_db" />
+        
     </LinearLayout>
 </ScrollView>

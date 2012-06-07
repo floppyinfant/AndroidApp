@@ -13,6 +13,7 @@
     <string name="sf_toast">Toast</string>
     <string name="sf_canvas">Canvas</string>
     <string name="sf_opengl">OpenGL</string>
+    <string name="sf_db">DB SQLite</string>
     
     <!-- Options-Menue -->
     <string name="opt_preferences">Einstellungen</string>

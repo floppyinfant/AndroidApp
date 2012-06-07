@@ -161,6 +161,9 @@ public class Main extends Activity {
 		case R.id.sf_opengl:
 			startActivity(new Intent(this, GLActivity.class));
 			break;
+		case R.id.sf_db:
+			startActivity(new Intent(this, DataActivity.class));
+			break;
 		}
 	}
 
