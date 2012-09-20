@@ -1,5 +1,8 @@
 package com.floppyinfant.android;
 
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+
 import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
@@ -53,7 +56,12 @@ public class NetworkService extends Service {
 		}
 		
 		public void send() {
-			// TODO do something
+			String url = "http://www.floppyinfant.com:80/skate";
+			
+			DefaultHttpClient client = new DefaultHttpClient();
+			HttpPost httpPost = new HttpPost(url);
+			
+			
 			
 		}
 		
