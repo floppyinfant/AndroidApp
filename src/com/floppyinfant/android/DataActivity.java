@@ -8,38 +8,35 @@ import android.widget.SimpleCursorAdapter;
 
 public class DataActivity extends ListActivity {
 	
-	private DBManager mDBM;
+	private DBManager dbm;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		mDBM = new DBManager(this);
-		SQLiteDatabase db = mDBM.getReadableDatabase();
+		// setContentView...
 		
-		/*
-		 * To query the database you can use query(), rawQuery() 
-		 * or the SQLiteQueryBuilder class.
-		 */
-		Cursor cursor = db.query(
-				false, 							// distinct
-				DBSchema.DATABASE_TABLE, 			// table
-				DBSchema.SEARCH_COLUMNS, 		// columns
-				null, 							// selection
-				null, 							// selectionArgs
-				null, 							// groupBy
-				null, 							// having
-				null, 							// orderBy
-				null							// limit
-		);
+		
+		// use the DBManager to handle the database
+		dbm = new DBManager(this);
+		
+		
+		// actions triggered by a button or menu item (move to OnClickListener)...
+		
+		// query the database for results (=cursor)
+		dbm.open();
+		Cursor cursor = dbm.getAllRecords();
 		startManagingCursor(cursor);
-		
+		// show the result in an AdapterView using a CursorAdapter
 		int[] widgetKeys = new int[] {
 				android.R.id.text1,
 				android.R.id.text2
 		};
-		//SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_2, cursor, DBSchema.RESULT_COLUMNS, widgetKeys);
-		SimpleCursorAdapter adapter = new DataAdapter(this, android.R.layout.simple_list_item_2, cursor, DBSchema.RESULT_COLUMNS, widgetKeys);
+		SimpleCursorAdapter adapter = new DataAdapter(this, 
+				android.R.layout.simple_list_item_2, 
+				cursor, 
+				DBManager.Schema.RESULT_COLUMNS, 
+				widgetKeys);
 		setListAdapter(adapter);
 	}
 	

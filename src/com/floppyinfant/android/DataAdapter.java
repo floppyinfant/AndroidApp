@@ -32,8 +32,8 @@ public class DataAdapter extends SimpleCursorAdapter {
 	public DataAdapter(Context context, int layout, Cursor c, String[] from, int[] to) {
 		super(context, layout, c, from, to);
 		
-		index1 = c.getColumnIndex(DBSchema.KEY_NAME);
-		index2 = c.getColumnIndex(DBSchema.KEY_TEXT);
+		index1 = c.getColumnIndex(DBManager.Schema.KEY_NAME);
+		index2 = c.getColumnIndex(DBManager.Schema.KEY_TEXT);
 	}
 
 	@Override
