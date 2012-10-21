@@ -27,7 +27,7 @@ public class DataListActivity extends ListActivity {
 	private DataDBAdapter dbm;
 	private Cursor mCursor;
 	
-	private int mNoteNumber = 1;
+	private int mNoteNumber = 1;	// load from Preferences to be persistent
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +54,9 @@ public class DataListActivity extends ListActivity {
 		setListAdapter(adapter);
 	}
 	
-	/* ************************************************************************
-	 * Menus
-	 */
+	/* *************************************************************************
+	 * Menu Callbacks
+	 **************************************************************************/
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		boolean result = super.onCreateOptionsMenu(menu);
@@ -70,8 +70,8 @@ public class DataListActivity extends ListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.opt_create:
-			//startActivity(new Intent(this, DataInputActivity.class));
-			createRecord();
+			Intent i = new Intent(this, DataEditActivity.class);
+			startActivityForResult(i, ACTIVITY_CREATE);
 			return true;
 		case R.id.opt_preferences:
 			startActivity(new Intent(this, Preferences.class));
@@ -85,16 +85,6 @@ public class DataListActivity extends ListActivity {
 		default:
 			return super.onOptionsItemSelected(item);
 		}
-	}
-
-	private void createRecord() {
-		dbm.insertRecord("Note " + mNoteNumber++, "");	// TODO: Subactivity for insert
-		fillData();
-		
-		/*
-		Intent i = new Intent(this, DataEditActivity.class);
-		startActivityForResult(i, ACTIVITY_CREATE);
-		*/
 	}
 	
 	@Override
@@ -122,8 +112,10 @@ public class DataListActivity extends ListActivity {
 	@Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
+        
         Cursor c = mCursor;
         c.moveToPosition(position);
+        
         Intent i = new Intent(this, DataEditActivity.class);
         i.putExtra(DataDBAdapter.KEY_ROWID, id);
         i.putExtra(DataDBAdapter.KEY_NAME, c.getString(c.getColumnIndexOrThrow(DataDBAdapter.KEY_NAME)));
@@ -134,23 +126,28 @@ public class DataListActivity extends ListActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
-        Bundle extras = intent.getExtras();
-        switch(requestCode) {
-            case ACTIVITY_CREATE:
-                String title = extras.getString(DataDBAdapter.KEY_NAME);
-                String text = extras.getString(DataDBAdapter.KEY_TEXT);
-                dbm.insertRecord(title, text);
-                fillData();
-                break;
-            case ACTIVITY_EDIT:
-                Long rowId = extras.getLong(DataDBAdapter.KEY_ROWID);
-                if (rowId != null) {
-                    String editTitle = extras.getString(DataDBAdapter.KEY_NAME);
-                    String editText = extras.getString(DataDBAdapter.KEY_TEXT);
-                    dbm.updateRecord(rowId, editTitle, editText);
-                }
-                fillData();
-                break;
+        
+        if (resultCode == RESULT_OK) {
+        	Bundle extras = intent.getExtras();
+            switch(requestCode) {
+                case ACTIVITY_CREATE:
+                    String title = extras.getString(DataDBAdapter.KEY_NAME);
+                    String text = extras.getString(DataDBAdapter.KEY_TEXT);
+                    dbm.insertRecord(title, text);
+                    fillData();
+                    break;
+                case ACTIVITY_EDIT:
+                    Long rowId = extras.getLong(DataDBAdapter.KEY_ROWID);
+                    if (rowId != null) {
+                        String editTitle = extras.getString(DataDBAdapter.KEY_NAME);
+                        String editText = extras.getString(DataDBAdapter.KEY_TEXT);
+                        dbm.updateRecord(rowId, editTitle, editText);
+                    }
+                    fillData();
+                    break;                
+            }
+        } else if (resultCode == RESULT_CANCELED) {
+        	// do nothing
         }
     }
 

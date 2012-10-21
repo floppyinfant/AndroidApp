@@ -231,21 +231,31 @@ public class DataDBAdapter extends SQLiteOpenHelper {
 		return mDb.insert(DATABASE_TABLE, null, values);
 	}
 	
-	public void updateRecord(long rowId, String title, String text) {
+	public boolean updateRecord(long rowId, String title, String text) {
 		// UPDATE <table> SET <col> = <value> WHERE <condition>
 		
-		// TODO
+		ContentValues args = new ContentValues();
+        args.put(KEY_NAME, title);
+        args.put(KEY_TEXT, text);
+
+        return mDb.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
 	}
 	
-	public void deleteRecord(long rowId) {
+	public boolean deleteRecord(long rowId) {
 		// DELETE FROM <table> WHERE <condition>
 		
-		// TODO
+		return mDb.delete(DATABASE_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
 	}
 	
 	public Cursor fetchRecord(long rowId) {
-		Cursor c = null;
-		// TODO
+		Cursor c = mDb.query(true, DATABASE_TABLE, 
+				new String[] {KEY_ROWID, KEY_NAME, KEY_TEXT}, 
+	            KEY_ROWID + "=" + rowId, 
+	            null, null, null, null, null);
+		
+		if (c != null) {
+			c.moveToFirst();
+		}
 		return c;
 	}
 	
