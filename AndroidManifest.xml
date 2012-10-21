@@ -42,14 +42,14 @@
         <activity android:name=".Tab2" />
         <activity android:name=".Form" />
         <activity android:name=".List" />
-        <activity android:name=".DataAdapter" />
         <activity android:name=".Maps" />
         <activity android:name=".Help" />
         <activity android:name=".Preferences" />
         <activity android:name=".NetworkServiceController" />
         <activity android:name=".Graphics" />
         <activity android:name=".GLActivity" />
-        <activity android:name=".DataActivity" />
+        <activity android:name=".data.DataListActivity" />
+        <activity android:name=".data.DataEditActivity" />
         
         <!-- *************************************************************** -->
         <!-- Services -->

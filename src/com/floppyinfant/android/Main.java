@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.floppyinfant.android.data.DataListActivity;
 import com.google.android.apps.analytics.GoogleAnalyticsTracker;
 
 public class Main extends Activity {
@@ -162,7 +163,7 @@ public class Main extends Activity {
 			startActivity(new Intent(this, GLActivity.class));
 			break;
 		case R.id.sf_db:
-			startActivity(new Intent(this, DataActivity.class));
+			startActivity(new Intent(this, DataListActivity.class));
 			break;
 		}
 	}
@@ -183,9 +184,11 @@ public class Main extends Activity {
 	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		super.onCreateOptionsMenu(menu);
-		getMenuInflater().inflate(R.menu.main, menu);    
-		return true;
+		boolean result = super.onCreateOptionsMenu(menu);
+		getMenuInflater().inflate(R.menu.main, menu);
+		// Alternative:
+		// menu.add(0,id,0,str);
+		return result;
 	}
 
 	@Override

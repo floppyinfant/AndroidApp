@@ -19,6 +19,8 @@
     <string name="opt_preferences">Einstellungen</string>
     <string name="opt_help">Hilfe</string>
     <string name="opt_close">Beenden</string>
+    <string name="opt_create">Hinzufügen...</string>
+    <string name="opt_delete">Löschen</string>
     
     <!-- Dialog -->
     <string name="dia1_title">Preferences lesen</string>
@@ -43,5 +45,11 @@
     <!-- Preferences -->
     <string name="prefs_cat1">Einstellungen</string>
     <string name="prefs_username">Benutzername</string>
+    
+    <!-- Data Edit -->
+    <string name="field_title">Titel</string>
+    <string name="field_text">Text</string>
+    <string name="btn_confirm">OK</string>
+    
     
 </resources>

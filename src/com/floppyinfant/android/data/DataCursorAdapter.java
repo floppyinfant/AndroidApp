@@ -1,4 +1,4 @@
-package com.floppyinfant.android;
+package com.floppyinfant.android.data;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -16,7 +16,7 @@ import android.widget.TextView;
  * @author TM
  *
  */
-public class DataAdapter extends SimpleCursorAdapter {
+public class DataCursorAdapter extends SimpleCursorAdapter {
 	
 	private int index1 = -1;
 	private int index2 = -1;
@@ -29,11 +29,11 @@ public class DataAdapter extends SimpleCursorAdapter {
 		private TextView text2;
 	}
 
-	public DataAdapter(Context context, int layout, Cursor c, String[] from, int[] to) {
+	public DataCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to) {
 		super(context, layout, c, from, to);
 		
-		index1 = c.getColumnIndex(DBManager.Schema.KEY_NAME);
-		index2 = c.getColumnIndex(DBManager.Schema.KEY_TEXT);
+		index1 = c.getColumnIndex(DataDBAdapter.KEY_NAME);
+		index2 = c.getColumnIndex(DataDBAdapter.KEY_TEXT);
 	}
 
 	@Override
