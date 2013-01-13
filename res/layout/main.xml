@@ -78,5 +78,12 @@
             android:onClick="onClickAction"
             android:text="@string/sf_db" />
         
+        <Button
+            android:id="@+id/sf_sensor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickAction"
+            android:text="@string/sf_sensor" />
+        
     </LinearLayout>
 </ScrollView>

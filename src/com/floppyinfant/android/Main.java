@@ -23,6 +23,8 @@ public class Main extends Activity {
 	/** Logging */
 	private static final String TAG = Main.class.getSimpleName();
 	
+	public static boolean DEBUG = true;
+	
 	GoogleAnalyticsTracker tracker;
 
 	/* ************************************************************************
@@ -164,6 +166,9 @@ public class Main extends Activity {
 			break;
 		case R.id.sf_db:
 			startActivity(new Intent(this, DataListActivity.class));
+			break;
+		case R.id.sf_sensor:
+			startActivity(new Intent(this, SensorActivity.class));
 			break;
 		}
 	}

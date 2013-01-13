@@ -4,7 +4,7 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk android:minSdkVersion="8" />
+    <uses-sdk android:minSdkVersion="15" />
     
     <!-- Permissions needed by Google Analytics -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,7 +16,7 @@
 	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" /><!-- Emulator faked location data -->
 	
     <application
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
         android:debuggable="true" >
@@ -50,16 +50,26 @@
         <activity android:name=".GLActivity" />
         <activity android:name=".data.DataListActivity" />
         <activity android:name=".data.DataEditActivity" />
+        <activity android:name=".SensorActivity" />
         
         <!-- *************************************************************** -->
         <!-- Services -->
         <!-- *************************************************************** -->
         <service android:name=".NetworkService" /><!-- Local Service (RPC); Remote Service (IPC) mit Attribut 'android:process=":globalCtx"'; Doppelpunkt: neuer Prozess, Großbuchstabe: gleicher User (Zugriff nur durch startende Anwendung); Kleinbuchstabe: globaler Context (Zugriff durch alle Prozesse möglich) -->
         
+        <!-- *************************************************************** -->
+        <!-- Provider -->
+        <!-- *************************************************************** -->
         <!--
         <provider ></provider>
+        -->
+        
+        <!-- *************************************************************** -->
+        <!-- Receiver -->
+        <!-- *************************************************************** -->
+        <!--
         <receiver ></receiver>
         -->
+        
     </application>
-    
 </manifest>

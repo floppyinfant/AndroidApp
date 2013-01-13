@@ -14,6 +14,7 @@
     <string name="sf_canvas">Canvas</string>
     <string name="sf_opengl">OpenGL</string>
     <string name="sf_db">DB SQLite</string>
+    <string name="sf_sensor">Sensors</string>
     
     <!-- Options-Menue -->
     <string name="opt_preferences">Einstellungen</string>
@@ -50,6 +51,9 @@
     <string name="field_title">Titel</string>
     <string name="field_text">Text</string>
     <string name="btn_confirm">OK</string>
+    
+    <!-- Sensors -->
+    <string name="sensor_title">Sensors</string>
     
     
 </resources>
