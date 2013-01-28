@@ -25,7 +25,7 @@ import android.util.Log;
  * @author TM
  *
  */
-public class DataDBAdapter extends SQLiteOpenHelper {
+public class DatabaseManager extends SQLiteOpenHelper {
 	
 	/* *************************************************************************
 	 * Database-Schema
@@ -87,7 +87,7 @@ public class DataDBAdapter extends SQLiteOpenHelper {
 	 * 
 	 * @param context
 	 */
-	public DataDBAdapter(Context context) {
+	public DatabaseManager(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 		
 		this.mContext = context;
@@ -201,7 +201,7 @@ public class DataDBAdapter extends SQLiteOpenHelper {
 	 * 
 	 * @return this (method chaining)
 	 */
-	public DataDBAdapter open() throws SQLException {
+	public DatabaseManager open() throws SQLException {
 		mDb = getWritableDatabase();
 		return this; 	// Method-Chaining, self reference
 	}

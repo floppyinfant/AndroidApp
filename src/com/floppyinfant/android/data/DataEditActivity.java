@@ -28,9 +28,9 @@ public class DataEditActivity extends Activity {
         mRowId = null;
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            String title = extras.getString(DataDBAdapter.KEY_NAME);
-            String text = extras.getString(DataDBAdapter.KEY_TEXT);
-            mRowId = extras.getLong(DataDBAdapter.KEY_ROWID);
+            String title = extras.getString(DatabaseManager.KEY_NAME);
+            String text = extras.getString(DatabaseManager.KEY_TEXT);
+            mRowId = extras.getLong(DatabaseManager.KEY_ROWID);
 
             if (title != null) {
                 mTitle.setText(title);
@@ -45,10 +45,10 @@ public class DataEditActivity extends Activity {
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
 
-                bundle.putString(DataDBAdapter.KEY_NAME, mTitle.getText().toString());
-                bundle.putString(DataDBAdapter.KEY_TEXT, mText.getText().toString());
+                bundle.putString(DatabaseManager.KEY_NAME, mTitle.getText().toString());
+                bundle.putString(DatabaseManager.KEY_TEXT, mText.getText().toString());
                 if (mRowId != null) {
-                    bundle.putLong(DataDBAdapter.KEY_ROWID, mRowId);
+                    bundle.putLong(DatabaseManager.KEY_ROWID, mRowId);
                 }
 
                 Intent mIntent = new Intent();

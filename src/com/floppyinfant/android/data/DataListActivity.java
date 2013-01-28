@@ -24,7 +24,7 @@ public class DataListActivity extends ListActivity {
     
     private static final int DELETE_ID = Menu.FIRST + 1;	// used by context-menu
     
-	private DataDBAdapter dbm;
+	private DatabaseManager dbm;
 	private Cursor mCursor;
 	
 	private int mNoteNumber = 1;	// load from Preferences to be persistent
@@ -35,7 +35,7 @@ public class DataListActivity extends ListActivity {
 		setContentView(R.layout.data_list);
 		
 		// use the DBAdapter to handle the database
-		dbm = new DataDBAdapter(this);
+		dbm = new DatabaseManager(this);
 		dbm.open();
 		fillData();
 		
@@ -48,7 +48,7 @@ public class DataListActivity extends ListActivity {
 		startManagingCursor(mCursor);
 		
 		// show the result in an AdapterView using a CursorAdapter, mapping the data 'from' 'to'
-		String[] from = new String[] {DataDBAdapter.KEY_NAME, DataDBAdapter.KEY_TEXT};	// specify database fields
+		String[] from = new String[] {DatabaseManager.KEY_NAME, DatabaseManager.KEY_TEXT};	// specify database fields
 		int [] to = new int[] {android.R.id.text1, android.R.id.text2};			// to bind to views
 		SimpleCursorAdapter adapter = new DataCursorAdapter(this, android.R.layout.simple_list_item_2, mCursor, from, to);
 		setListAdapter(adapter);
@@ -117,9 +117,9 @@ public class DataListActivity extends ListActivity {
         c.moveToPosition(position);
         
         Intent i = new Intent(this, DataEditActivity.class);
-        i.putExtra(DataDBAdapter.KEY_ROWID, id);
-        i.putExtra(DataDBAdapter.KEY_NAME, c.getString(c.getColumnIndexOrThrow(DataDBAdapter.KEY_NAME)));
-        i.putExtra(DataDBAdapter.KEY_TEXT, c.getString(c.getColumnIndexOrThrow(DataDBAdapter.KEY_TEXT)));
+        i.putExtra(DatabaseManager.KEY_ROWID, id);
+        i.putExtra(DatabaseManager.KEY_NAME, c.getString(c.getColumnIndexOrThrow(DatabaseManager.KEY_NAME)));
+        i.putExtra(DatabaseManager.KEY_TEXT, c.getString(c.getColumnIndexOrThrow(DatabaseManager.KEY_TEXT)));
         startActivityForResult(i, ACTIVITY_EDIT);
     }
 
@@ -131,16 +131,16 @@ public class DataListActivity extends ListActivity {
         	Bundle extras = intent.getExtras();
             switch(requestCode) {
                 case ACTIVITY_CREATE:
-                    String title = extras.getString(DataDBAdapter.KEY_NAME);
-                    String text = extras.getString(DataDBAdapter.KEY_TEXT);
+                    String title = extras.getString(DatabaseManager.KEY_NAME);
+                    String text = extras.getString(DatabaseManager.KEY_TEXT);
                     dbm.insertRecord(title, text);
                     fillData();
                     break;
                 case ACTIVITY_EDIT:
-                    Long rowId = extras.getLong(DataDBAdapter.KEY_ROWID);
+                    Long rowId = extras.getLong(DatabaseManager.KEY_ROWID);
                     if (rowId != null) {
-                        String editTitle = extras.getString(DataDBAdapter.KEY_NAME);
-                        String editText = extras.getString(DataDBAdapter.KEY_TEXT);
+                        String editTitle = extras.getString(DatabaseManager.KEY_NAME);
+                        String editText = extras.getString(DatabaseManager.KEY_TEXT);
                         dbm.updateRecord(rowId, editTitle, editText);
                     }
                     fillData();

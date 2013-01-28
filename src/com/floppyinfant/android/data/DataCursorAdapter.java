@@ -32,8 +32,8 @@ public class DataCursorAdapter extends SimpleCursorAdapter {
 	public DataCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to) {
 		super(context, layout, c, from, to);
 		
-		index1 = c.getColumnIndex(DataDBAdapter.KEY_NAME);
-		index2 = c.getColumnIndex(DataDBAdapter.KEY_TEXT);
+		index1 = c.getColumnIndex(DatabaseManager.KEY_NAME);
+		index2 = c.getColumnIndex(DatabaseManager.KEY_TEXT);
 	}
 
 	@Override
