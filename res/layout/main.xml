@@ -58,6 +58,13 @@
             android:text="@string/sf_toast" />
         
         <Button
+            android:id="@+id/sf_service"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickAction"
+            android:text="@string/sf_service" />
+        
+        <Button
             android:id="@+id/sf_canvas"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

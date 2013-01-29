@@ -46,6 +46,7 @@
         <activity android:name=".Help" />
         <activity android:name=".Preferences" />
         <activity android:name=".NetworkServiceController" />
+        <activity android:name=".WifiServiceController" />
         <activity android:name=".Graphics" />
         <activity android:name=".GLActivity" />
         <activity android:name=".data.DataListActivity" />
@@ -54,8 +55,16 @@
         
         <!-- *************************************************************** -->
         <!-- Services -->
+        <!--                                                                        --> 
+        <!-- Local Service (RPC)                                                    -->
+        <!-- Remote Service (IPC) mit Attribut 'android:process=":globalCtx"'       -->
+        <!--                                                                        -->
+        <!-- Doppelpunkt: neuer Prozess                                             --> 
+        <!-- Großbuchstabe: gleicher User (Zugriff nur durch startende Anwendung)   -->
+        <!-- Kleinbuchstabe: globaler Context (Zugriff durch alle Prozesse möglich) -->
         <!-- *************************************************************** -->
-        <service android:name=".NetworkService" /><!-- Local Service (RPC); Remote Service (IPC) mit Attribut 'android:process=":globalCtx"'; Doppelpunkt: neuer Prozess, Großbuchstabe: gleicher User (Zugriff nur durch startende Anwendung); Kleinbuchstabe: globaler Context (Zugriff durch alle Prozesse möglich) -->
+        <service android:name=".NetworkService" />
+        <service android:name=".WifiService" />
         
         <!-- *************************************************************** -->
         <!-- Provider -->

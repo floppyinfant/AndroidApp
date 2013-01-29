@@ -158,6 +158,9 @@ public class Main extends Activity {
 			Toast toast = Toast.makeText(this, msg, Toast.LENGTH_LONG);
 			toast.show();
 			break;
+		case R.id.sf_service:
+			startActivity(new Intent(this, WifiServiceController.class));
+			break;
 		case R.id.sf_canvas:
 			startActivity(new Intent(this, Graphics.class));
 			break;
@@ -236,7 +239,6 @@ public class Main extends Activity {
 		default:
 			// return true;
 		}
-		
 		return super.onContextItemSelected(item);   
 	}
 }
